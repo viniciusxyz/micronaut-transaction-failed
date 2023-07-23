@@ -19,7 +19,12 @@ public class DepositController {
 
     @Post
     public void deposit(@Body Deposit deposit) {
-        depositService.makeDeposit(deposit);
+        depositService.makeDeposit(deposit, false);
+    }
+
+    @Post("/throw")
+    public void depositWithThrow(@Body Deposit deposit) {
+        depositService.makeDeposit(deposit, true);
     }
 
 }

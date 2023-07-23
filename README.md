@@ -10,13 +10,24 @@
 
 - [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
 
-## Post para teste:
+## Post for test:
 
 ```bash
-curl --location --request POST 'http://localhost:8080/deposit' \
+curl --location --request POST 'http://localhost:8080/deposit/throw' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 "accountNumber": "0000001",
 "amount": 1.0
 }'
+```
+
+### H2 Console
+
+http://localhost:8082
+
+**Selects for test**
+
+```sql
+select * from accounts;
+select * from deposit_history;
 ```
